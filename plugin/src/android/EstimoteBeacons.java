@@ -133,6 +133,9 @@ public class EstimoteBeacons extends CordovaPlugin
 		final CallbackContext callbackContext)
 		throws JSONException
 	{
+		if ("beacons_startRangingBeacons".equals(action)) {
+			startRangingBeacons(args, callbackContext);
+		}
 		if ("beacons_startRangingBeaconsInRegion".equals(action)) {
 			startRangingBeaconsInRegion(args, callbackContext);
 		}
@@ -235,6 +238,19 @@ public class EstimoteBeacons extends CordovaPlugin
 			sendResultForBluetoothEnabled(mBluetoothStateCallbackContext);
 			mBluetoothStateCallbackContext = null;
 		}
+	}
+
+	/**
+	 * Start ranging for beacons.
+	 */
+	private void startRangingBeacons(
+		CordovaArgs cordovaArgs,
+		final CallbackContext callbackContext)
+		throws JSONException
+	{
+		Log.i(LOGTAG, "startRangingBeacons");
+
+		JSONObject json = cordovaArgs.getJSONObject(0);
 	}
 
 	/**
