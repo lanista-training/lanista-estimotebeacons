@@ -251,7 +251,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "startRangingBeacons");
 
 		//JSONObject json = cordovaArgs.getJSONObject(0);
-		JSONObject json = new JSONArray();
+		JSONObject json = new JSONObject();
 
 		final Region region = createRegion(json);
 
