@@ -260,7 +260,7 @@ public class EstimoteBeacons extends CordovaPlugin
 				public void onServiceReady() {
 					Log.i(LOGTAG, "onServiceReady");
 					mIsConnected = true;
-					startRanging(region, callbackContext);
+					startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 				}
 			});
 		}
