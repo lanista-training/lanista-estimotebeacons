@@ -234,14 +234,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
 		final UUID ESTIMOTE_PROXIMITY_UUID = UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
     final Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
-		/*
-		//JSONObject json = cordovaArgs.getJSONObject(0);
-		//final Region region = createRegion(json);
 
-		// TODO: How to handle case when region already ranged?
-		// Stop ranging then start again?
-		// Currently, if ranging callback already exists we
-		// do nothing, just return.
 		String key = regionHashMapKey(region);
 		if (null != mRangingCallbackContexts.get(key)) {
 			return;
@@ -271,7 +264,6 @@ public class EstimoteBeacons extends CordovaPlugin
 				}
 			});
 		}
-		*/
 	}
 
 	/**
