@@ -273,6 +273,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		mBeaconManager.setRangingListener(new PluginRangingListener());
 
 		// If connected start ranging immediately, otherwise first connect.
+		/*
 		if (mIsConnected) {
 			startRanging(region, callbackContext);
 		}
@@ -289,6 +290,7 @@ public class EstimoteBeacons extends CordovaPlugin
 					startRanging(region, callbackContext);
 				}
 			});
+			*/
 		}
 	}
 
