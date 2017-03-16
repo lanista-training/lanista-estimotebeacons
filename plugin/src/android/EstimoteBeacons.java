@@ -688,7 +688,7 @@ public class EstimoteBeacons extends CordovaPlugin
 			// Note that results are not delivered on UI thread.
 
 			Log.i(LOGTAG, "onBeaconsDiscovered");
-
+			/*
 			try {
 				// store in plugin
 				mRangedBeacons.clear();
@@ -716,6 +716,7 @@ public class EstimoteBeacons extends CordovaPlugin
 				Log.e(LOGTAG, "onBeaconsDiscovered error:", e);
 			}
 		}
+		*/
 	}
 
 	/**
