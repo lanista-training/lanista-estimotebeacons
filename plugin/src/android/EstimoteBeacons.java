@@ -233,7 +233,7 @@ public class EstimoteBeacons extends CordovaPlugin
 	{
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
 		final UUID ESTIMOTE_PROXIMITY_UUID = UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", null, null, null);
+    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
 
 		String key = regionHashMapKey(ALL_ESTIMOTE_BEACONS);
 
