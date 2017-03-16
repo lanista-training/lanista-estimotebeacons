@@ -47,7 +47,6 @@ public class EstimoteBeacons extends CordovaPlugin
 	private CordovaInterface  mCordovaInterface;
 
 	private ArrayList<Beacon> mRangedBeacons;
-	private BeaconConnected   mConnectedBeacon;
 	private boolean           mIsConnected = false;
 
 
