@@ -233,7 +233,7 @@ public class EstimoteBeacons extends CordovaPlugin
 	{
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
 		final UUID ESTIMOTE_PROXIMITY_UUID = UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", null, null, null);
+    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
 
 		String key = regionHashMapKey(ALL_ESTIMOTE_BEACONS);
 
@@ -272,7 +272,6 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	private void startRanging(Region region, CallbackContext callbackContext)
 	{
-		/*
 		try {
 			Log.i(LOGTAG, "startRanging");
 			mBeaconManager.startRanging(region);
@@ -281,7 +280,6 @@ public class EstimoteBeacons extends CordovaPlugin
 			Log.e(LOGTAG, "startRanging error:", e);
 			callbackContext.error("Start ranging RemoteException");
 		}
-		*/
 	}
 
 	/**
