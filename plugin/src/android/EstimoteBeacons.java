@@ -271,14 +271,14 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	private void startRanging(Region region, CallbackContext callbackContext)
 	{
-		//try {
+		try {
 			Log.i(LOGTAG, "startRanging");
 			mBeaconManager.startRanging(region);
-		//}
-		//catch(android.os.RemoteException e) {
-		//	Log.e(LOGTAG, "startRanging error:", e);
+		}
+		catch(Exception e) {
+			Log.e(LOGTAG, "startRanging error:", e);
 			callbackContext.error("Start ranging RemoteException");
-		//}
+		}
 	}
 
 	/**
