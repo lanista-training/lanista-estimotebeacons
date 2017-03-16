@@ -730,7 +730,7 @@ public class EstimoteBeacons extends CordovaPlugin
 			json.put("proximityUUID", uuid);
 			json.put("proximity", proximity);
 			json.put("distance", distance);
-			json.put("name", b.getName());
+			//json.put("name", b.getName());
 			json.put("macAddress", b.getMacAddress());
 			jsonArray.put(json);
 		}
@@ -756,7 +756,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 	private String regionHashMapKey(Region region)
 	{
-		String uuid = region.getProximityUUID();
+		String uuid = region.getProximityUUID().toString();
 		Integer major = region.getMajor();
 		Integer minor = region.getMinor();
 
@@ -777,7 +777,7 @@ public class EstimoteBeacons extends CordovaPlugin
             regionHashMapKey(uuid, major, minor)
         );
 
-		return new Region(identifier, uuid, major, minor);
+		return new Region(identifier, UUID.fromString(uuid), major, minor);
 	}
 
 	/**
@@ -789,7 +789,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		int major = Integer.parseInt(regionValues[1]);
 		int minor = Integer.parseInt(regionValues[2]);
 
-		return new Region(key, uuid, major, minor);
+		return new Region(key, UUID.fromString(uuid), major, minor);
 	}
 
 
