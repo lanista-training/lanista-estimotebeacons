@@ -688,14 +688,15 @@ public class EstimoteBeacons extends CordovaPlugin
 			// Note that results are not delivered on UI thread.
 
 			Log.i(LOGTAG, "onBeaconsDiscovered");
-			/*
+
 			try {
 				// store in plugin
 				mRangedBeacons.clear();
 				mRangedBeacons.addAll(beacons);
 
 				// Find region callback.
-				String key = regionHashMapKey(region);
+				//String key = regionHashMapKey(region);
+				String key = "lanista";
 				CallbackContext rangingCallback = mRangingCallbackContexts.get(key);
 				if (null == rangingCallback) {
 					// No callback found.
@@ -715,7 +716,6 @@ public class EstimoteBeacons extends CordovaPlugin
 			catch(JSONException e) {
 				Log.e(LOGTAG, "onBeaconsDiscovered error:", e);
 			}
-			*/
 		}
 	}
 
