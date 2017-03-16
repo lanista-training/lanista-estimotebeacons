@@ -265,7 +265,7 @@ public class EstimoteBeacons extends CordovaPlugin
 				}
 			});
 		}
-		*//
+		*/
 	}
 
 	/**
