@@ -240,7 +240,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		if (null != mRangingCallbackContexts.get(key)) {
 			return;
 		}
-
+		/*
 		// Add callback to hash map.
 		mRangingCallbackContexts.put(key, callbackContext);
 
@@ -261,10 +261,11 @@ public class EstimoteBeacons extends CordovaPlugin
 				public void onServiceReady() {
 					Log.i(LOGTAG, "onServiceReady");
 					mIsConnected = true;
-					//startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
+					startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 				}
 			});
 		}
+		*/
 	}
 
 	/**
