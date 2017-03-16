@@ -72,7 +72,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "initialize");
 
 		super.initialize(cordova, webView);
-		EstimoteSDK.initialize(getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
+		//EstimoteSDK.initialize(getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
 
 		mCordovaInterface = cordova;
 		mCordovaInterface.setActivityResultCallback(this);
@@ -194,7 +194,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// Check if Bluetooth is enabled.
 		//BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-		if (!SystemRequirementsHelper.isBluetoothLeAvailable(this)) {
+		//if (!SystemRequirementsHelper.isBluetoothLeAvailable(this)) {
 			// Open Bluetooth dialog on the UI thread.
 			final CordovaPlugin self = this;
 			mBluetoothStateCallbackContext = callbackContext;
@@ -208,11 +208,11 @@ public class EstimoteBeacons extends CordovaPlugin
 				}
 			};
 			mCordovaInterface.getActivity().runOnUiThread(openBluetoothDialog);
-		}
-		else {
+		//}
+		//else {
 			// Bluetooth is enabled, return the result to JavaScript,
-			sendResultForBluetoothEnabled(callbackContext);
-		}
+			//sendResultForBluetoothEnabled(callbackContext);
+		//}
 	}
 
 	/**
@@ -220,12 +220,15 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	public void sendResultForBluetoothEnabled(CallbackContext callbackContext)
 	{
+		callbackContext.success(0);
+		/*
 		if (!SystemRequirementsHelper.isBluetoothLeAvailable(this)) {
 			callbackContext.success(1);
 		}
 		else {
 			callbackContext.success(0);
 		}
+		*/
 	}
 
 	/**
