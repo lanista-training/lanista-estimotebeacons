@@ -110,8 +110,6 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	public void onDestroy() {
 		Log.i(LOGTAG, "onDestroy");
-		disconnectConnectedBeacon();
-		disconnectBeaconManager();
 	}
 
 	/**
