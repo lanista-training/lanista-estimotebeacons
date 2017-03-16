@@ -12,6 +12,8 @@ import android.util.Log;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 
+import com.estimote.sdk.Beacon;
+
 import com.estimote.sdk.*;
 import com.estimote.sdk.cloud.model.*;
 import com.estimote.sdk.connection.*;
