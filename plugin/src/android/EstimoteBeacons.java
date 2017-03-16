@@ -12,8 +12,6 @@ import android.util.Log;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 
-import com.estimote.sdk.Beacon;
-
 import com.estimote.sdk.*;
 import com.estimote.sdk.cloud.model.*;
 import com.estimote.sdk.connection.*;
@@ -74,6 +72,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "initialize");
 
 		super.initialize(cordova, webView);
+		EstimoteSDK.initialize(getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
 
 		mCordovaInterface = cordova;
 		mCordovaInterface.setActivityResultCallback(this);
@@ -195,7 +194,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// Check if Bluetooth is enabled.
 		//BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
-		if (!mBeaconManager.isBluetoothEnabled()) {
+		if (!SystemRequirementsHelper.isBluetoothLeAvailable(this)) {
 			// Open Bluetooth dialog on the UI thread.
 			final CordovaPlugin self = this;
 			mBluetoothStateCallbackContext = callbackContext;
@@ -221,7 +220,7 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	public void sendResultForBluetoothEnabled(CallbackContext callbackContext)
 	{
-		if (mBeaconManager.isBluetoothEnabled()) {
+		if (!SystemRequirementsHelper.isBluetoothLeAvailable(this)) {
 			callbackContext.success(1);
 		}
 		else {
