@@ -233,9 +233,9 @@ public class EstimoteBeacons extends CordovaPlugin
 	{
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
 		final UUID ESTIMOTE_PROXIMITY_UUID = UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
-    final region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
+    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", ESTIMOTE_PROXIMITY_UUID, null, null);
 
-		String key = regionHashMapKey(region);
+		String key = regionHashMapKey(ALL_ESTIMOTE_BEACONS);
 		if (null != mRangingCallbackContexts.get(key)) {
 			return;
 		}
@@ -248,7 +248,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// If connected start ranging immediately, otherwise first connect.
 		if (mIsConnected) {
-			startRanging(region, callbackContext);
+			startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 		}
 		else {
 			Log.i(LOGTAG, "connect");
