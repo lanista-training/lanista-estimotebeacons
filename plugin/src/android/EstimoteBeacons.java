@@ -444,14 +444,14 @@ public class EstimoteBeacons extends CordovaPlugin
 	 */
 	private void startMonitoring(Region region, CallbackContext callbackContext)
 	{
-		try {
+		//try {
 			Log.i(LOGTAG, "startMonitoring");
 			mBeaconManager.startMonitoring(region);
-		}
-		catch(android.os.RemoteException e) {
-			Log.e(LOGTAG, "startMonitoring error:", e);
-			callbackContext.error("startMonitoring RemoteException");
-		}
+		//}
+		//catch(android.os.RemoteException e) {
+		//	Log.e(LOGTAG, "startMonitoring error:", e);
+		//	callbackContext.error("startMonitoring RemoteException");
+		//}
 	}
 
 	/**
