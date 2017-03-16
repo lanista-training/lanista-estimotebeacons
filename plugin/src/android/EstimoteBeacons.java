@@ -349,7 +349,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		throws JSONException
 	{
 		Log.i(LOGTAG, "stopRangingBeaconsInRegion");
-
+		/*
 		JSONObject json = cordovaArgs.getJSONObject(0);
 
 		Region region = createRegion(json);
@@ -389,6 +389,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		else {
 			callbackContext.error("Not connected");
 		}
+		*/
 	}
 
 	/**
