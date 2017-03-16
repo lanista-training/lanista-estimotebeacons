@@ -298,7 +298,8 @@ public class EstimoteBeacons extends CordovaPlugin
 		Region region = createRegion(json);
 
 		// If ranging callback does not exist call error callback
-		String key = regionHashMapKey(region);
+		//String key = regionHashMapKey(region);
+		String key = "lanista";
 		CallbackContext rangingCallback = mRangingCallbackContexts.get(key);
 		if (null == rangingCallback) {
 			callbackContext.error("Region not ranged");
