@@ -232,11 +232,11 @@ public class EstimoteBeacons extends CordovaPlugin
 		throws JSONException
 	{
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
-
+		/*
 		JSONObject json = cordovaArgs.getJSONObject(0);
 
 		final Region region = createRegion(json);
-		/*
+
 		// TODO: How to handle case when region already ranged?
 		// Stop ranging then start again?
 		// Currently, if ranging callback already exists we
