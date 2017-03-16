@@ -29,6 +29,8 @@
 
 		<source-file src="plugin/src/android/EstimoteBeacons.java" target-dir="src/com/evothings" />
 		<source-file src="plugin/src/android/estimote-sdk.aar" target-dir="libs" />
+		<framework src="plugin/src/android/build-extras.gradle" custom="true" type="gradleReference" />
+
 	</platform>
 
 	<platform name="ios">
