@@ -237,7 +237,6 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		String key = regionHashMapKey(ALL_ESTIMOTE_BEACONS);
 
-		/*
 		if (null != mRangingCallbackContexts.get(key)) {
 			return;
 		}
@@ -266,7 +265,6 @@ public class EstimoteBeacons extends CordovaPlugin
 				}
 			});
 		}
-		*/
 	}
 
 	/**
