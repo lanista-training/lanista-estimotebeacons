@@ -372,7 +372,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// Stop ranging if connected.
 		if (mIsConnected) {
-			try {
+			//try {
 				Log.i(LOGTAG, "stopRanging");
 
 				// Stop ranging.
@@ -380,11 +380,11 @@ public class EstimoteBeacons extends CordovaPlugin
 
 				// Send back success.
 				callbackContext.success();
-			}
-			catch(android.os.RemoteException e) {
-				Log.e(LOGTAG, "stopRanging", e);
-				callbackContext.error("stopRanging RemoteException");
-			}
+			//}
+			//catch(android.os.RemoteException e) {
+			//	Log.e(LOGTAG, "stopRanging", e);
+			//	callbackContext.error("stopRanging RemoteException");
+			//}
 		}
 		else {
 			callbackContext.error("Not connected");
@@ -486,7 +486,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// Stop monitoring if connected.
 		if (mIsConnected) {
-			try {
+			//try {
 				Log.i(LOGTAG, "stopMonitoring");
 
 				// Stop monitoring.
@@ -494,11 +494,11 @@ public class EstimoteBeacons extends CordovaPlugin
 
 				// Send back success.
 				callbackContext.success();
-			}
-			catch(android.os.RemoteException e) {
-				Log.e(LOGTAG, "stopMonitoring", e);
-				callbackContext.error("stopMonitoring RemoteException");
-			}
+			//}
+			//catch(android.os.RemoteException e) {
+			//	Log.e(LOGTAG, "stopMonitoring", e);
+			//	callbackContext.error("stopMonitoring RemoteException");
+			//}
 		}
 		else {
 			callbackContext.error("Not connected");
