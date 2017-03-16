@@ -290,8 +290,8 @@ public class EstimoteBeacons extends CordovaPlugin
 					startRanging(region, callbackContext);
 				}
 			});
-			*/
 		}
+		*/
 	}
 
 	/**
