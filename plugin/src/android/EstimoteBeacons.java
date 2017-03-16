@@ -249,7 +249,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// If connected start ranging immediately, otherwise first connect.
 		if (mIsConnected) {
-			startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
+			//startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 		}
 		else {
 			Log.i(LOGTAG, "connect");
@@ -261,7 +261,7 @@ public class EstimoteBeacons extends CordovaPlugin
 				public void onServiceReady() {
 					Log.i(LOGTAG, "onServiceReady");
 					mIsConnected = true;
-					startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
+					//startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 				}
 			});
 		}
