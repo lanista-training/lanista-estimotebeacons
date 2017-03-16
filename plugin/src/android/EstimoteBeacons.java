@@ -236,8 +236,8 @@ public class EstimoteBeacons extends CordovaPlugin
     final Region ALL_ESTIMOTE_BEACONS = new Region("rid", null, null, null);
 
 		//String key = regionHashMapKey(ALL_ESTIMOTE_BEACONS);
-		String key = "test";
-		/*
+		String key = "lanista";
+
 		if (null != mRangingCallbackContexts.get(key)) {
 			return;
 		}
@@ -266,7 +266,6 @@ public class EstimoteBeacons extends CordovaPlugin
 				}
 			});
 		}
-		*/
 	}
 
 	/**
