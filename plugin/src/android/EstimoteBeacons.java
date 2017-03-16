@@ -294,8 +294,8 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "stopRangingBeaconsInRegion");
 
 		JSONObject json = cordovaArgs.getJSONObject(0);
-
-		Region region = createRegion(json);
+		final UUID ESTIMOTE_PROXIMITY_UUID = UUID.fromString("B9407F30-F5F8-466E-AFF9-25556B57FE6D");
+    final Region ALL_ESTIMOTE_BEACONS = new Region("rid", null, null, null);
 
 		// If ranging callback does not exist call error callback
 		//String key = regionHashMapKey(region);
@@ -320,7 +320,7 @@ public class EstimoteBeacons extends CordovaPlugin
 				Log.i(LOGTAG, "stopRanging");
 
 				// Stop ranging.
-				mBeaconManager.stopRanging(region);
+				mBeaconManager.stopRanging(ALL_ESTIMOTE_BEACONS);
 
 				// Send back success.
 				callbackContext.success();
