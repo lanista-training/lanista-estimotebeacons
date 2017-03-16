@@ -719,7 +719,7 @@ public class EstimoteBeacons extends CordovaPlugin
 			double distance = Utils.computeAccuracy(b);
 
 			// Normalize UUID.
-			String uuid = Utils.normalizeProximityUUID(b.getProximityUUID());
+			String uuid = Utils.normalizeProximityUUID(b.getProximityUUID().toString());
 
 			// Construct JSON object for beacon.
 			JSONObject json = new JSONObject();
