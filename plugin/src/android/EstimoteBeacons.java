@@ -688,7 +688,8 @@ public class EstimoteBeacons extends CordovaPlugin
 			// Note that results are not delivered on UI thread.
 
 			Log.i(LOGTAG, "onBeaconsDiscovered");
-
+			Log.i(LOGTAG, "beacon size");
+			Log.i(LOGTAG, beacons.size());
 			try {
 				// store in plugin
 				mRangedBeacons.clear();
