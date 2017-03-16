@@ -28,7 +28,7 @@
 		</config-file>
 
 		<source-file src="plugin/src/android/EstimoteBeacons.java" target-dir="src/com/evothings" />
-		<source-file src="plugin/src/android/estimote-sdk-preview.jar" target-dir="libs" />
+		<source-file src="plugin/src/android/estimote-sdk.aar" target-dir="libs" />
 	</platform>
 
 	<platform name="ios">
