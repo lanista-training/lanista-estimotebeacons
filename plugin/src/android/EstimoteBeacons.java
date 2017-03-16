@@ -715,8 +715,8 @@ public class EstimoteBeacons extends CordovaPlugin
 			catch(JSONException e) {
 				Log.e(LOGTAG, "onBeaconsDiscovered error:", e);
 			}
+			*/
 		}
-		*/
 	}
 
 	/**
