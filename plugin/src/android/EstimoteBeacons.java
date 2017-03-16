@@ -253,13 +253,9 @@ public class EstimoteBeacons extends CordovaPlugin
 		//JSONObject json = cordovaArgs.getJSONObject(0);
 		//JSONObject json = new JSONObject();
 		//final Region region = createRegion(json);
+		/*
 		final Region region = new Region("testing", null, 0, 0);
 		// null ranges all regions, if unset
-
-		// TODO: How to handle case when region already ranged?
-		// Stop ranging then start again?
-		// Currently, if ranging callback already exists we
-		// do nothing, just return.
 
 		String key = regionHashMapKey(region);
 		if (null != mRangingCallbackContexts.get(key)) {
@@ -273,7 +269,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		mBeaconManager.setRangingListener(new PluginRangingListener());
 
 		// If connected start ranging immediately, otherwise first connect.
-		/*
+
 		if (mIsConnected) {
 			startRanging(region, callbackContext);
 		}
