@@ -71,7 +71,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "initialize");
 
 		super.initialize(cordova, webView);
-		//EstimoteSDK.initialize(getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
+		EstimoteSDK.initialize(cordova.getActivity().getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
 
 		mCordovaInterface = cordova;
 		mCordovaInterface.setActivityResultCallback(this);
@@ -131,9 +131,6 @@ public class EstimoteBeacons extends CordovaPlugin
 		final CallbackContext callbackContext)
 		throws JSONException
 	{
-		if ("beacons_startRangingBeacons".equals(action)) {
-			startRangingBeacons(args, callbackContext);
-		}
 		if ("beacons_startRangingBeaconsInRegion".equals(action)) {
 			startRangingBeaconsInRegion(args, callbackContext);
 		}
@@ -229,67 +226,17 @@ public class EstimoteBeacons extends CordovaPlugin
 	/**
 	 * Start ranging for beacons.
 	 */
-	private void startRangingBeacons(
-		CordovaArgs cordovaArgs,
-		final CallbackContext callbackContext)
-		throws JSONException
-	{
-		Log.i(LOGTAG, "startRangingBeacons");
-
-		//JSONObject json = cordovaArgs.getJSONObject(0);
-		//JSONObject json = new JSONObject();
-		//final Region region = createRegion(json);
-		/*
-		final Region region = new Region("testing", null, 0, 0);
-		// null ranges all regions, if unset
-
-		String key = regionHashMapKey(region);
-		if (null != mRangingCallbackContexts.get(key)) {
-			return;
-		}
-
-		// Add callback to hash map.
-		mRangingCallbackContexts.put(key, callbackContext);
-
-		// Create ranging listener.
-		mBeaconManager.setRangingListener(new PluginRangingListener());
-
-		// If connected start ranging immediately, otherwise first connect.
-
-		if (mIsConnected) {
-			startRanging(region, callbackContext);
-		}
-		else {
-			Log.i(LOGTAG, "connect");
-
-			// todo: consider whether this holds up to several startRanging(...)
-			//   calls before onServiceReady() fires
-			mBeaconManager.connect(new BeaconManager.ServiceReadyCallback() {
-				@Override
-				public void onServiceReady() {
-					Log.i(LOGTAG, "onServiceReady");
-					mIsConnected = true;
-					startRanging(region, callbackContext);
-				}
-			});
-		}
-		*/
-	}
-
-	/**
-	 * Start ranging for beacons.
-	 */
 	private void startRangingBeaconsInRegion(
 		CordovaArgs cordovaArgs,
 		final CallbackContext callbackContext)
 		throws JSONException
 	{
 		Log.i(LOGTAG, "startRangingBeaconsInRegion");
-		/*
+
 		JSONObject json = cordovaArgs.getJSONObject(0);
 
 		final Region region = createRegion(json);
-
+		/*
 		// TODO: How to handle case when region already ranged?
 		// Stop ranging then start again?
 		// Currently, if ranging callback already exists we
