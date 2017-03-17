@@ -239,6 +239,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		String key = "lanista";
 
 		if (null != mRangingCallbackContexts.get(key)) {
+			Log.i(LOGTAG, "startRangingBeaconsInRegion ALREADY RANGING...");
 			return;
 		}
 
