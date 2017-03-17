@@ -542,7 +542,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		// Create JSON object.
 		JSONObject json = new JSONObject();
 		json.put("region", makeJSONRegion(region));
-		json.put("beacons", makeJSONBeaconArray(beacons));
+		json.put("beacon", makeJSONBeacon(beacons));
 		return json;
 	}
 
@@ -583,9 +583,13 @@ public class EstimoteBeacons extends CordovaPlugin
 			// Compute proximity value.
 			Utils.Proximity proximityValue = Utils.computeProximity(b);
 			int proximity = 0; // Unknown.
-			if (Utils.Proximity.IMMEDIATE == proximityValue) { proximity = 1; }
-			else if (Utils.Proximity.NEAR == proximityValue) { proximity = 2; }
-			else if (Utils.Proximity.FAR == proximityValue) { proximity = 3; }
+			if (Utils.Proximity.IMMEDIATE == proximityValue) {
+				proximity = 1;
+			} else if (Utils.Proximity.NEAR == proximityValue) {
+				proximity = 2;
+			} else if (Utils.Proximity.FAR == proximityValue) {
+				proximity = 3;
+			}
 
 			// Compute distance value.
 			double distance = Utils.computeAccuracy(b);
@@ -605,6 +609,39 @@ public class EstimoteBeacons extends CordovaPlugin
 			//json.put("name", b.getName());
 			json.put("macAddress", b.getMacAddress());
 			jsonArray.put(json);
+		}
+		return jsonArray;
+	}
+
+	/**
+	 * Create JSON object representing a beacon list.
+	 */
+	private JSONArray makeJSONBeacon(List<Beacon> beacons)
+		throws JSONException
+	{
+		for (Beacon b : beacons) {
+			// Compute proximity value.
+			Utils.Proximity proximityValue = Utils.computeProximity(b);
+			int proximity = 0; // Unknown.
+			if (Utils.Proximity.IMMEDIATE == proximityValue) {
+				proximity = 1;
+				// Compute distance value.
+				double distance = Utils.computeAccuracy(b);
+				// Normalize UUID.
+				String uuid = Utils.normalizeProximityUUID(b.getProximityUUID().toString());
+				// Construct JSON object for beacon.
+				JSONObject json = new JSONObject();
+				json.put("major", b.getMajor());
+				json.put("minor", b.getMinor());
+				json.put("rssi", b.getRssi());
+				json.put("measuredPower", b.getMeasuredPower());
+				json.put("proximityUUID", uuid);
+				json.put("proximity", proximity);
+				json.put("distance", distance);
+				json.put("macAddress", b.getMacAddress());
+				return json;
+			}
+			return null;
 		}
 		return jsonArray;
 	}
