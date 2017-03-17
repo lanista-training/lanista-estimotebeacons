@@ -239,7 +239,6 @@ public class EstimoteBeacons extends CordovaPlugin
 		String key = "lanista";
 
 		if (null != mRangingCallbackContexts.get(key)) {
-			Log.i(LOGTAG, "startRangingBeaconsInRegion ALREADY RANGING...");
 			return;
 		}
 
@@ -251,7 +250,7 @@ public class EstimoteBeacons extends CordovaPlugin
 
 		// If connected start ranging immediately, otherwise first connect.
 		if (mIsConnected) {
-			//startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
+			startRanging(ALL_ESTIMOTE_BEACONS, callbackContext);
 		}
 		else {
 			Log.i(LOGTAG, "connect");
