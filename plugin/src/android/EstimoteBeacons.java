@@ -71,7 +71,7 @@ public class EstimoteBeacons extends CordovaPlugin
 		Log.i(LOGTAG, "initialize");
 
 		super.initialize(cordova, webView);
-		EstimoteSDK.initialize(cordova.getActivity().getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
+		//EstimoteSDK.initialize(cordova.getActivity().getApplicationContext(), "lanista-training-com", "0c78e3fe8ac331cc0da78c6521886073");
 
 		mCordovaInterface = cordova;
 		mCordovaInterface.setActivityResultCallback(this);
