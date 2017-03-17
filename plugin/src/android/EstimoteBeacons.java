@@ -616,7 +616,7 @@ public class EstimoteBeacons extends CordovaPlugin
 	/**
 	 * Create JSON object representing a beacon list.
 	 */
-	private JSONArray makeJSONBeacon(List<Beacon> beacons)
+	private JSONObject makeJSONBeacon(List<Beacon> beacons)
 		throws JSONException
 	{
 		for (Beacon b : beacons) {
@@ -641,9 +641,8 @@ public class EstimoteBeacons extends CordovaPlugin
 				json.put("macAddress", b.getMacAddress());
 				return json;
 			}
-			return null;
 		}
-		return jsonArray;
+		return null;
 	}
 
     private String regionHashMapKey(String uuid, Integer major, Integer minor) {
